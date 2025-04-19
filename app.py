@@ -10,7 +10,7 @@ def login():
         email = request.form['email']
         print(f"Username: {username}, Password: {password}, Email: {email}")
         return f"Welcome, {username}!"
-    return render_template('login.html')
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
