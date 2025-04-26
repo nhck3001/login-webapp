@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+    <h2>Welcome to the Home Page!</h2>
+    <p>You are successfully logged in.</p>
+
+    <!-- Add the Household Example button -->
+    <a href="/household">
+        <button>Household Example</button>
+    </a>
+        <!-- Add the Household Example button -->
+    <a href="/dashboard">
+        <button>Go to dashboard</button>
+    </a>
+        <!-- Add the Household Example button -->
+    <a href="/cross-selling">
+        <button>Cross-selling analysis</button>
+    </a>
+    <a href="/disengage">
+        <button>Disengage analysis</button>
+    </a>
+    <!-- Search Button -->
+    <form action="{{ url_for('search') }}" method="get">
+        <input type="submit" value="Go to Search Page">
+    </form>
+</body>
+</html>
+

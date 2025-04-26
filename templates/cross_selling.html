@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cross-Selling Analysis</title>
+</head>
+<body>
+    <h2>Top Predictive Products for Cross-Selling</h2>
+    {% if plot_url %}
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Feature Importance Chart">
+    {% else %}
+        <p>No data available to display.</p>
+    {% endif %}
+    <div class="explanation">
+        <p>
+            In this analysis, the top 5 product types were identified based on their purchase frequency across all baskets in the transaction dataset. Specifically, each transaction was grouped by basket and product type (referred to as COMMODITY), and the total number of baskets containing each commodity was calculated. The five product types that appeared in the greatest number of unique baskets were selected as the "top 5." These included GROCERY STAPLE, PRODUCE, DAIRY, BEVERAGE - NON WATER, and FROZEN FOOD.
+
+Using a Random Forest classification model, we analyzed which other product types most strongly predict the presence of each top commodity in a basket. The results reveal clear cross-selling patterns: for instance, purchases of DAIRY, PRODUCE, and BAKERY are highly predictive of baskets that also contain GROCERY STAPLE items, suggesting strong complementarities in everyday shopping behavior. Similarly, customers who buy PRODUCE often purchase DAIRY and FROZEN FOOD, pointing to natural bundling opportunities in perishable and fresh goods. These insights can be leveraged to inform product placement, bundled promotions, and targeted marketing, ultimately driving more effective cross-selling strategies across core retail categories.
+        </p>
+    </div>
+
+</body>
+</html>

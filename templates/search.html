@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Data Pulls</title>
+</head>
+<body>
+    <h2>Search Data Pulls by Hshd_num</h2>
+    <form method="POST" action="{{ url_for('search') }}">
+        <label for="hshd_num">Enter Hshd_num:</label>
+        <input type="text" name="hshd_num" required><br><br>
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
+

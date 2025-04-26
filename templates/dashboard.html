@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        .plot-container {
+            width: 45%;
+            margin: 10px;
+            display: inline-block;
+        }
+        .plot-container img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dashboard</h1>
+
+    <!-- First Plot: Income vs Total Spend -->
+    <div class="plot-container">
+        <h3>Impact of Income on Total Spend</h3>
+        <img src="data:image/png;base64, {{ plot_url_income }}" alt="Income vs Spend">
+    </div>
+
+    <!-- Second Plot: Brand and Organic Item Preferences -->
+    <div class="plot-container">
+        <h3>Brand and Organic Item Preferences</h3>
+        <img src="data:image/png;base64, {{ plot_url_brand_organic }}" alt="Brand Preferences">
+    </div>
+
+    <!-- Third Plot (Placeholder) -->
+    <div class="plot-container">
+        <h3>Total Spend by Week for each Year</h3>
+        {% if plot_url_3 %}
+            <img src="data:image/png;base64, {{ plot_url_3 }}" alt="Plot 3">
+        {% else %}
+            <p>Plot 3 not yet available.</p>
+        {% endif %}
+    </div>
+
+    <!-- Fourth Plot (Placeholder) -->
+    <div class="plot-container">
+        <h3>Product Category Popularity Over Time</h3>
+        {% if plot_url_4 %}
+            <img src="data:image/png;base64, {{ plot_url_4 }}" alt="Plot 4">
+        {% else %}
+            <p>Plot 4 not yet available.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>

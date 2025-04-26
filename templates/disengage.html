@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Disengagement Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .chart {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .summary {
+            margin-top: 40px;
+            background: #ffffff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Customer Disengagement Analysis</h1>
+    <p>
+        This analysis identifies non-loyal households at risk of disengagement by detecting decreasing spending trends over time.
+        The bar chart below shows disengagement rates by age group, and the regression summary outlines which household characteristics
+        most significantly correlate with disengagement.
+    </p>
+
+    <div class="chart">
+        <h2>Disengagement Rate by Age Group</h2>
+        {% if plot_url %}
+            <img src="data:image/png;base64,{{ plot_url }}" alt="Disengagement Bar Chart">
+        {% else %}
+            <p>No chart available.</p>
+        {% endif %}
+    </div>
+
+    <div class="summary">
+        <h2>Logistic Regression Summary</h2>
+        <pre>{{ regression_summary }}</pre>
+    </div>
+    <div>
+        <p>
+            To explore which household characteristics contribute to customer disengagement, we analyzed transaction data by calculating spending trends over time at the household level. A household was labeled "disengaged" if its total weekly spend exhibited a declining trend, determined through simple linear regression on transaction history.
+
+To uncover what demographic factors contribute to disengagement, we implemented a logistic regression model. Instead of a one-size-fits-all approach, we stratified the analysis by age group (e.g., 35–44, 45–54) to understand how predictors differ across consumer segments.
+
+For each age group, we:
+
+Built a logistic regression model to predict disengagement using features such as CHILDREN, INCOME_RANGE, and HSHD_COMPOSITION.
+
+Addressed multicollinearity using Variance Inflation Factor (VIF) and removed unstable predictors.
+
+Reported a model summary to assess the strength and direction of each predictor's relationship to disengagement.
+        </p>
+        <p>Here are notable findings from the regression coefficients:
+
+            CHILDREN had a positive but statistically insignificant effect (p = 0.83), suggesting no meaningful relationship with disengagement across age groups.
+            
+            AGE_RANGE_55-64 and AGE_RANGE_65-74 both showed negative coefficients, implying those households may be less likely to disengage, though p-values > 0.1 indicate limited statistical significance.
+            
+            INCOME_RANGE_150K+ showed an extreme coefficient with a massive standard error, flagging it as an unstable or sparse feature (likely due to too few records in this group).
+            
+            HSHD_COMPOSITION_1 Adult and Kids had almost no impact on disengagement (coefficient ≈ 0, p ≈ 0.96), suggesting this composition doesn’t influence spending trends.
+            
+            </op>
+    </div>
+
+</body>
+</html>
