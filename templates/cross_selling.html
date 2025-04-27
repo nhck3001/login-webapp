@@ -12,9 +12,64 @@
     {% endif %}
     <div class="explanation">
         <p>
-            In this analysis, the top 5 product types were identified based on their purchase frequency across all baskets in the transaction dataset. Specifically, each transaction was grouped by basket and product type (referred to as COMMODITY), and the total number of baskets containing each commodity was calculated. The five product types that appeared in the greatest number of unique baskets were selected as the "top 5." These included GROCERY STAPLE, PRODUCE, DAIRY, BEVERAGE - NON WATER, and FROZEN FOOD.
-
-Using a Random Forest classification model, we analyzed which other product types most strongly predict the presence of each top commodity in a basket. The results reveal clear cross-selling patterns: for instance, purchases of DAIRY, PRODUCE, and BAKERY are highly predictive of baskets that also contain GROCERY STAPLE items, suggesting strong complementarities in everyday shopping behavior. Similarly, customers who buy PRODUCE often purchase DAIRY and FROZEN FOOD, pointing to natural bundling opportunities in perishable and fresh goods. These insights can be leveraged to inform product placement, bundled promotions, and targeted marketing, ultimately driving more effective cross-selling strategies across core retail categories.
+            Model Fit
+    Pseudo R-squared: 0.203
+    This indicates a moderate fit, suggesting that around 20% of the variation in customer disengagement is explained by the independent variables included in the model.
+            
+    AIC and BIC:
+            
+    AIC: 63.4383
+            
+    BIC: 82.4405
+    These values help assess the goodness-of-fit for the model, with lower values indicating a better fit, although the model fit is not perfect.
+            
+    2. Significant Factors
+    From the output, we can identify which factors have a significant influence on customer disengagement.
+            
+    Children: The coefficient is positive but has a high p-value (0.8332), meaning the presence of children does not significantly affect disengagement in this model.
+            
+    Age Range:
+            
+    Age Range 45-54: Coefficient is negative (-0.8134), but it is not statistically significant (p-value 0.4819).
+            
+    Age Range 55-64: Similarly, it is negative (-1.9320) but not significant (p-value 0.1307).
+            
+    Age Range 65-74: Negative (-2.0615), but not significant (p-value 0.2175).
+            
+    Age Range 75+: Positive (0.6904), but not significant (p-value 0.6813).
+            
+    Income Range:
+            
+    Income Range 150K+: Extremely high coefficient (21.7562), but the p-value is nearly 1 (0.9997), suggesting that this coefficient is not practically useful.
+            
+    Income Range 35-49K: Positive coefficient (0.4779), but not significant (p-value 0.7000).
+            
+    Income Range 50-74K: Negative coefficient (-1.3347), not significant (p-value 0.2651).
+            
+    Income Range 75-99K: Positive coefficient (1.5420), not significant (p-value 0.3168).
+            
+    Income Range Under 35K: Positive coefficient (1.4318), but not significant (p-value 0.3601).
+            
+    Household Composition (1 Adult and Kids): The coefficient is very small (-0.0542) and not significant (p-value 0.9558), indicating that this factor doesn't significantly influence disengagement.
+            
+    Predicting Customer Disengagement
+    Risk of Disengagement:
+    Age: Based on the age ranges, older customers (age 65 and above) might be at a higher risk of disengagement as they show a higher negative coefficient, but none of the age categories are statistically significant.
+            
+    Income: Customers with lower income ranges (under 35K) might be more prone to disengagement, as this group has a positive coefficient, although it isn't statistically significant.
+            
+    Household Composition: The lack of significance for household composition (1 Adult and Kids) suggests that this factor doesn't directly affect disengagement.
+            
+    Key Retention Strategies:
+    To address disengagement, here are some strategies that could be derived from the model:
+            
+    Targeting Older Demographics: While age is not statistically significant, older customers may still be more likely to disengage. Offering special benefits or discounts for seniors could be a helpful retention strategy.
+            
+    Focus on Lower Income Groups: Although the income groups did not show statistical significance, there may still be an opportunity to target lower-income customers (Under 35K) with more personalized, affordable offers to prevent disengagement.
+            
+    Customer Segmentation: Since certain income groups show signs of disengagement, personalized engagement campaigns based on income could be created. For instance, customers from higher-income brackets could be offered premium loyalty programs or special services.
+            
+    Engagement Programs for Families: Since household composition did not significantly affect disengagement, creating family-focused programs or perks (e.g., family discounts, kids' entertainment) may encourage ongoing engagement.
         </p>
     </div>
 
