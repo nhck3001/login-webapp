@@ -17,7 +17,7 @@ from sklearn.metrics import classification_report
 from sklearn.linear_model import LinearRegression
 import statsmodels.api as sm
 import seaborn as sns
-
+import pyodbc
 
 matplotlib.use('Agg')  # Ensure we use Agg backend to avoid GUI-related issues
 app = Flask(__name__)
