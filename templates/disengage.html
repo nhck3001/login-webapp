@@ -53,29 +53,17 @@
     </div>
     <div>
         <p>
-            To explore which household characteristics contribute to customer disengagement, we analyzed transaction data by calculating spending trends over time at the household level. A household was labeled "disengaged" if its total weekly spend exhibited a declining trend, determined through simple linear regression on transaction history.
+            Based on the logistic regression analysis, several factors influence the likelihood of customer disengagement. The age range appears to have a mild effect, with older customers (aged 65 and above) showing a slightly higher risk of disengagement, although this factor is not statistically significant. Income is another key factor, with lower-income customers (under 35K) potentially at a higher risk of disengagement, although this is also not statistically significant. Household composition, specifically households with one adult and kids, did not show a significant effect on disengagement. Retention strategies should focus on targeting older demographics with personalized benefits or discounts aimed at seniors, offering affordable solutions for lower-income customers, and creating family-focused programs or perks, as household composition didn’t seem to impact disengagement. Additionally, customer segmentation based on income could help tailor specific engagement campaigns, such as premium services for higher-income customers or affordable offers for those at risk. While the model's results are not highly significant, these strategies could help prevent disengagement and foster continued customer engagement.
 
-To uncover what demographic factors contribute to disengagement, we implemented a logistic regression model. Instead of a one-size-fits-all approach, we stratified the analysis by age group (e.g., 35–44, 45–54) to understand how predictors differ across consumer segments.
 
-For each age group, we:
 
-Built a logistic regression model to predict disengagement using features such as CHILDREN, INCOME_RANGE, and HSHD_COMPOSITION.
 
-Addressed multicollinearity using Variance Inflation Factor (VIF) and removed unstable predictors.
 
-Reported a model summary to assess the strength and direction of each predictor's relationship to disengagement.
+
+
+
+            
         </p>
-        <p>Here are notable findings from the regression coefficients:
-
-            CHILDREN had a positive but statistically insignificant effect (p = 0.83), suggesting no meaningful relationship with disengagement across age groups.
-            
-            AGE_RANGE_55-64 and AGE_RANGE_65-74 both showed negative coefficients, implying those households may be less likely to disengage, though p-values > 0.1 indicate limited statistical significance.
-            
-            INCOME_RANGE_150K+ showed an extreme coefficient with a massive standard error, flagging it as an unstable or sparse feature (likely due to too few records in this group).
-            
-            HSHD_COMPOSITION_1 Adult and Kids had almost no impact on disengagement (coefficient ≈ 0, p ≈ 0.96), suggesting this composition doesn’t influence spending trends.
-            
-            </op>
     </div>
 
 </body>
