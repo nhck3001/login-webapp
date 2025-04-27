@@ -26,6 +26,7 @@ mlxtend==0.23.4
 numpy==2.2.3
 packaging==24.2
 pandas==2.2.3
+patsy==1.0.1
 pillow==11.1.0
 problog==2.2.7
 proto-plus==1.26.1
@@ -39,9 +40,12 @@ requests==2.32.3
 rsa==4.9
 scikit-learn==1.6.1
 scipy==1.15.2
+seaborn==0.13.2
 setuptools==78.1.0
 six==1.17.0
 soupsieve==2.6
+SQLAlchemy==2.0.40
+statsmodels==0.14.4
 threadpoolctl==3.6.0
 typing_extensions==4.13.2
 tzdata==2025.2
